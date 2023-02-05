@@ -1,11 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { ChakraProvider } from "@chakra-ui/react";
+import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import DefaultLayout from './layouts/DefaultLayout';
-import Header from './components/Header/Header';
+import DefaultLayout from "./layouts/DefaultLayout";
+import Header from "./components/Header/Header";
 
 const router = createBrowserRouter([
   {
@@ -13,17 +14,17 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: '/about',
-    element: 
-    <DefaultLayout header={<Header />}/>
-  }
+    path: `/porfolio/about`,
+    element: <DefaultLayout header={<Header />} />,
+  },
 ]);
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
   </React.StrictMode>
 );
 
