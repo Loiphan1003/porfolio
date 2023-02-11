@@ -55,7 +55,7 @@ export default function Content() {
             _hover={{
               backgroundColor: 'blackAlpha.600'
             }}
-            display='none'
+            display={{ base: 'block', md: 'none'}}
             >
               Contact me
             </Button>
@@ -63,8 +63,8 @@ export default function Content() {
           <Stack spacing={{ base: '20', md:'5'}} direction="row" justifyContent={{ base: 'center'}}>
             <Button
               borderRadius="50%"
-              h="50px"
-              w="50px"
+              h={{base:'60px', md:"50px"}}
+              w={{base:'60px', md:"50px"}}
               backgroundColor="white"
               _hover={{ backgroundColor: "#0077b6", color: "white" }}
               onClick={() =>
@@ -78,8 +78,8 @@ export default function Content() {
 
             <Button
               borderRadius="50%"
-              h="50px"
-              w="50px"
+              h={{base:'60px', md:"50px"}}
+              w={{base:'60px', md:"50px"}}
               backgroundColor="white"
               _hover={{
                 bgGradient: "linear(to-l, #7928CA, #FF0080)",
@@ -92,14 +92,6 @@ export default function Content() {
               <FontAwesomeIcon icon={faInstagram} size="2xl" />
             </Button>
 
-            <Button
-              borderRadius="50%"
-              h="50px"
-              w="50px"
-              backgroundColor="white"
-            >
-              <FontAwesomeIcon icon={faInstagram} size="2xl" />
-            </Button>
           </Stack>
         </Box>
       </ScaleFade>

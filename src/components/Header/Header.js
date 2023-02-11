@@ -1,7 +1,7 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
-import { Slide, Paper } from "@mui/material";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
+// import { Slide, Paper } from "@mui/material";
 import { Flex, Text, Box } from "@chakra-ui/react";
 
 export default function Header() {

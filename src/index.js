@@ -4,9 +4,13 @@ import "./index.css";
 import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import reportWebVitals from "./reportWebVitals";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import DefaultLayout from "./layouts/DefaultLayout";
-import Header from "./components/Header/Header";
+import { RouterProvider, createBrowserRouter} from "react-router-dom";
+import { Spinner } from "@chakra-ui/react";
+
+
+// admin components
+import Login from "./adminScence/Login";
+import Dashboard from "./adminScence/Dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
@@ -14,18 +18,22 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: `/porfolio/about`,
-    element: <DefaultLayout header={<Header />} />,
+    path: `/admin`,
+    element: <Login />,
   },
+  {
+    path: '/admin/dashboard',
+    element: <Dashboard />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <ChakraProvider>
-      <App />
+      <RouterProvider router={router} fallbackElement={<Spinner size='xl' />}/>
     </ChakraProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
