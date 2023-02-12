@@ -1,11 +1,10 @@
 import React from 'react';
 import { Grid, GridItem, Box, Image, Text } from '@chakra-ui/react'
-import Room from '../../assets/images/room.png'
-import lp from '../../assets/images/lp.jpg'
 
-function Project({data}) {
+function Project({data, getref}) {
     return (
         <Box
+            ref={getref}
             margin="20px 0px"
             padding='0 40px'
             h='fit-content'

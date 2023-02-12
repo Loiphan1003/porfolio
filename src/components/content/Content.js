@@ -12,9 +12,8 @@ import {
   Button,
   ScaleFade,
 } from "@chakra-ui/react";
-import imamgeLP from "../../assets/images/lp.jpg";
 
-export default function Content() {
+export default function Content({data, getref}) {
   // const { isOpen, onToggle } = useDisclosure()
 
   const openNewTab = (url) => {
@@ -27,26 +26,33 @@ export default function Content() {
 
   return (
     <Flex
+      ref={getref}
       p="0 40px"
-      flexDirection={{ base: "column-reverse", md: 'row' }}
+      flexDirection={{ base: "column-reverse", md: 'row' , lg: 'row' }}
       justifyContent={{ md: 'space-between'}}
       gap={{ base: '20px'}}
       w="100%"
     >
+
       <ScaleFade in={true} w='100%'>
         <Box
-          marginTop={{ md:'10px'}}
+          // marginTop={{ md:'10px'}}
           p="20px 30px"
-          w={{ base: "100%", md: "40px", lg: "120%" }}
-          h={{ base: "300px", md: "40px", lg: "400px" }}
+          w={{ base: "100%", md: "420px", lg: "50rem" }}
+          h={{ base: "300px", md: "400px", lg: "400px" }}
           borderRadius="30px"
           bgGradient="linear(to top right, #f7e9e8, #e9f0aa, #99aceb)"
           display="flex"
           flexDirection="column"
           justifyContent="space-between"
         >
-          <Text as='b' fontSize={{ base: '20px'}}>Hello, I’m Loi phan, a product Designer With 7 years of experience.</Text>
-
+          <Box>
+            <Text as='b' fontSize={{ base: '30px', md: '35px'}}>Hello, I’m Loi phan, a web developer.</Text>
+            <Text
+              marginTop='20px'
+              fontSize='20px'
+            >I'm very interested in creating websites. </Text>
+          </Box>
           <Button 
             backgroundColor='black' 
             color='white' 
@@ -97,12 +103,12 @@ export default function Content() {
       </ScaleFade>
 
       <ScaleFade in={true}>
-        <Box marginTop={{ base:'10px', md: '10px'}} boxSize="100%">
+        <Box boxSize='100%' >
           <Image
             borderRadius="30px"
-            h={{ base: "auto", md: "40px", lg: "400px" }}
-            w={{ base: "100%", md: "40px", lg: "318%" }}
-            src={imamgeLP}
+            h={{ base: "auto", md: "100%", lg: "400px" }}
+            w={{ base: "100%", md: "100%", lg: "318%" }}
+            src={data.image}
             alt="LP"
           />
         </Box>

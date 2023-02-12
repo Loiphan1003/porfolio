@@ -4,15 +4,12 @@ import React from "react";
 // import { Slide, Paper } from "@mui/material";
 import { Flex, Text, Box } from "@chakra-ui/react";
 
-export default function Header() {
-  const [selectMenu, setSelectMenu] = React.useState(0);
-
-  React.useEffect(() => {}, [selectMenu]);
+export default function Header({select, isSelect}) {
 
   return (
     <Flex padding="0 40px" h={10} justifyContent="space-between">
       <Box display="flex" dir="row" alignItems="center" gap={2} h={10}>
-        <Box h={5} w={5} borderRadius="50%" bg="tomato" />
+        <Box h={5} w={5} borderRadius="50%" bg="#24f66e" />
         <Text as="b">LP</Text>
       </Box>
 
@@ -24,20 +21,20 @@ export default function Header() {
       >
         <Text
           _hover={{ cursor: "pointer" }}
-          onClick={() => setSelectMenu(0)}
-          as={selectMenu === 0 ? "b" : "samp"}
+          onClick={() => select(0)}
+          as={isSelect === 0 ? "b" : "samp"}
         >
           Home
         </Text>
         <Text 
-          onClick={() => setSelectMenu(1)} 
+          onClick={() => select(1)} 
           _hover={{ cursor: "pointer" }}
-          as={selectMenu === 1 ? "b" : "samp"}  
+          as={isSelect === 1 ? "b" : "samp"}  
         >Projects</Text>
         <Text 
-          onClick={() => setSelectMenu(2)} 
+          onClick={() => select(2)} 
           _hover={{ cursor: "pointer" }}
-          as={selectMenu === 2 ? "b" : "samp"}
+          as={isSelect === 2 ? "b" : "samp"}
         >Contact</Text>
       </Box>
     </Flex>

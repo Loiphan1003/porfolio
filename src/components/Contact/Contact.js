@@ -3,13 +3,14 @@ import { Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-function Contact(props) {
+function Contact({data, getref}) {
   const openNewTab = (url) => {
     return window.open(url, "_blank");
   };
 
+
   return (
-    <Box paddingLeft="40px" paddingRight="40px" paddingBottom="20px">
+    <Box ref={getref} paddingLeft="40px" paddingRight="40px" paddingBottom="20px">
       <Flex
         flexDirection="column"
         justifyContent='space-around'
@@ -20,14 +21,15 @@ function Contact(props) {
       >
         <Text fontSize='4xl' as='b'>Want to work together ?</Text>
         <Stack direction="row" alignItems="center" justifyContent='center'>
-          <Button
-            _hover={{
-                backgroundColor: 'black',
-                color: 'white'
-            }}
-        >
-            Contact me
-        </Button>
+         
+          <Box
+            color='black'
+            fontSize={{ sm: "sm", md: "md", lg: "lg" }}
+
+          >
+            <Text>Contact Me</Text>
+            <Text>Email: {data.email !== undefined ? data.email : ''}</Text>
+          </Box>
 
           <Button
             borderRadius="50%"

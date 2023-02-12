@@ -8,9 +8,18 @@ import Contact from "./components/Contact/Contact";
 import axios from 'axios'
 
 function App() {
+  const refC = React.useRef();
+  const refD = React.useRef();
+  const refCon = React.useRef();
+
+  const [selectMenu, setSelectMenu] = React.useState(0);
+
 
   const [demos, setDemos] = React.useState([]);
-  const [info, setInfo] = React.useState({});
+  const [info, setInfo] = React.useState({
+    name: '',
+    image: '',
+  });
 
   React.useEffect( () => {
 
@@ -26,12 +35,25 @@ function App() {
   }, [])
 
 
+  React.useEffect(() => {
+    if(selectMenu === 0){
+      return refCon.current?.scrollIntoView({behavior: 'smooth'});
+    }
+    if(selectMenu === 1){
+      return refD.current?.scrollIntoView({behavior: 'smooth'});
+    }
+    if(selectMenu === 2){
+      return refC.current?.scrollIntoView({behavior: 'smooth'});
+    }
+    // console.log(refC);
+  }, [selectMenu])
+
   return (
     <div className="App">
-      <Header  />
-      <Content />
-      {demos.length > 0 && <Project data={demos}/>}
-      <Contact />
+      <Header isSelect={selectMenu} select={setSelectMenu}/>
+      <Content getref={refCon} data={info} />
+      {demos.length > 0 && <Project getref={refD} data={demos}/>}
+      <Contact getref={refC} data={info} />
     </div>
   );
 }
