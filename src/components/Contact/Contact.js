@@ -1,68 +1,70 @@
-import React from "react";
-import { Box, Flex, Text, Button, Stack } from "@chakra-ui/react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
-
-function Contact({data, getref}) {
-  const openNewTab = (url) => {
-    return window.open(url, "_blank");
-  };
+import React, {useState} from 'react';
+import { Box, Text, Input, Textarea, Flex, Button } from '@chakra-ui/react';
 
 
-  return (
-    <Box ref={getref} paddingLeft="40px" paddingRight="40px" paddingBottom="20px">
-      <Flex
-        flexDirection="column"
-        justifyContent='space-around'
-        w="100%"
-        h="200px"
-        borderRadius="20px"
-        bgGradient="linear(to top right, #f7e9e8, #e9f0aa, #99aceb)"
-      >
-        <Text fontSize='4xl' as='b'>Want to work together ?</Text>
-        <Stack direction="row" alignItems="center" justifyContent='center'>
-         
-          <Box
-            color='black'
-            fontSize={{ sm: "sm", md: "md", lg: "lg" }}
+function Contact({getref, data}) {
 
-          >
-            <Text>Contact Me</Text>
-            <Text>Email: {data.email !== undefined ? data.email : ''}</Text>
-          </Box>
+    const [dataInput, setDataInput] = useState({
+        name: '',
+        email: '',
+        message: ''
+    })
 
-          <Button
-            borderRadius="50%"
-            h="50px"
-            w="50px"
-            backgroundColor="white"
-            _hover={{ backgroundColor: "#0077b6", color: "white" }}
-            onClick={() =>
-              openNewTab(
-                "https://www.facebook.com/profile.php?id=100004241627166"
-              )
-            }
-          >
-            <FontAwesomeIcon icon={faFacebook} size="2xl" />
-          </Button>
+    const changeValue = (e) => {
+        return setDataInput({...dataInput, [e.target.name]: e.target.value})
+    }
 
-          <Button
-            borderRadius="50%"
-            h="50px"
-            w="50px"
-            backgroundColor="white"
-            _hover={{
-              bgGradient: "linear(to-l, #7928CA, #FF0080)",
-              color: "white",
-            }}
-            onClick={() => openNewTab("https://www.instagram.com/loiphan_lp/")}
-          >
-            <FontAwesomeIcon icon={faInstagram} size="2xl" />
-          </Button>
-        </Stack>
-      </Flex>
-    </Box>
-  );
+    return (
+        <Box 
+            ref={getref}
+            h='fit-content'
+            p={{base: '20px 30px', md:'100px 200px'}}
+        >
+            <Text
+                as='b'
+                textTransform='uppercase'
+                fontSize='40px'
+            >
+                Contact
+            </Text>
+
+            <Flex
+                marginTop='40px'
+                gap='20px'
+                flexDirection='column'
+            >
+                <Input 
+                    name='name' 
+                    borderColor='black' 
+                    placeholder='Name'  
+                    onChange={(e) => changeValue(e)}
+                />
+                <Input 
+                    name='email' 
+                    borderColor='black' 
+                    type='email' 
+                    placeholder='Email' 
+                    onChange={(e) => changeValue(e)}
+                />
+                <Textarea 
+                    name='message'
+                    placeholder='Message' 
+                    borderColor='black'
+                    h='200px'
+                    resize='none'
+                    onChange={(e) => changeValue(e)}
+                />
+                <Button
+                    _hover={{
+                        bgColor: 'black',
+                        color:'white'
+                    }}
+                >
+                    Send
+                </Button>
+            </Flex>
+        </Box>
+    );
 }
 
 export default Contact;

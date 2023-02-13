@@ -1,37 +1,25 @@
 import React from "react";
-// import styles from './Content.module.css';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faHand } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
 import {
   Box,
   Text,
   Flex,
   Image,
-  Stack,
-  Button,
   ScaleFade,
 } from "@chakra-ui/react";
+import SocialMedia from "../assets/SocialMedia";
 
 export default function Content({data, getref}) {
-  // const { isOpen, onToggle } = useDisclosure()
-
-  const openNewTab = (url) => {
-    return window.open(url, "_blank");
-  };
-
-  // React.useEffect(() => {
-  //   onToggle()
-  // }, [])
-
+  
   return (
     <Flex
       ref={getref}
       p="0 40px"
       flexDirection={{ base: "column-reverse", md: 'row' , lg: 'row' }}
-      justifyContent={{ md: 'space-between'}}
+      justifyContent={{base: 'center', md: 'space-between'}}
+      alignItems='center'
       gap={{ base: '20px'}}
       w="100%"
+      h='100vh'
     >
 
       <ScaleFade in={true} w='100%'>
@@ -53,55 +41,12 @@ export default function Content({data, getref}) {
               fontSize='20px'
             >I'm very interested in creating websites. </Text>
           </Box>
-          <Button 
-            backgroundColor='black' 
-            color='white' 
-            borderRadius='30px' 
-            h='50px'
-            _hover={{
-              backgroundColor: 'blackAlpha.600'
-            }}
-            display={{ base: 'block', md: 'none'}}
-            >
-              Contact me
-            </Button>
 
-          <Stack spacing={{ base: '20', md:'5'}} direction="row" justifyContent={{ base: 'center'}}>
-            <Button
-              borderRadius="50%"
-              h={{base:'60px', md:"50px"}}
-              w={{base:'60px', md:"50px"}}
-              backgroundColor="white"
-              _hover={{ backgroundColor: "#0077b6", color: "white" }}
-              onClick={() =>
-                openNewTab(
-                  "https://www.facebook.com/profile.php?id=100004241627166"
-                )
-              }
-            >
-              <FontAwesomeIcon icon={faFacebook} size="2xl" />
-            </Button>
-
-            <Button
-              borderRadius="50%"
-              h={{base:'60px', md:"50px"}}
-              w={{base:'60px', md:"50px"}}
-              backgroundColor="white"
-              _hover={{
-                bgGradient: "linear(to-l, #7928CA, #FF0080)",
-                color: "white",
-              }}
-              onClick={() =>
-                openNewTab("https://www.instagram.com/loiphan_lp/")
-              }
-            >
-              <FontAwesomeIcon icon={faInstagram} size="2xl" />
-            </Button>
-
-          </Stack>
+          <SocialMedia />
         </Box>
       </ScaleFade>
-
+      
+      {data.image !== '' && 
       <ScaleFade in={true}>
         <Box boxSize='100%' >
           <Image
@@ -112,7 +57,7 @@ export default function Content({data, getref}) {
             alt="LP"
           />
         </Box>
-      </ScaleFade>
+      </ScaleFade>}
     </Flex>
   );
 }
