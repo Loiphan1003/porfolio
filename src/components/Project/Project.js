@@ -1,26 +1,82 @@
 import React from 'react';
-import { Grid, GridItem, Box, Image, Text } from '@chakra-ui/react'
+import { Flex, Stack, Box, Image, Text } from '@chakra-ui/react'
 
 function Project({data, getref}) {
     return (
         <Box
             ref={getref}
-            margin="20px 0px"
-            padding='0 40px'
+            // margin="20px 0px"
+            padding='60px 40px'
             h='fit-content'
+            bgGradient="linear(to-l, #02aab0, #00cdac)"
         >
-            <Grid  
-                templateColumns={{base:'repeat(1, 1fr)', md:'repeat(2, 1fr)'}}
-                gap={6}
+            <Text
+                as='b'
+                fontSize='40px'
+                color='white'
+                textTransform='uppercase'
+            >
+                Projects
+            </Text>
+            <Flex 
+                marginTop='30px'
+                flexDirection='column'
+                gap={20}
+                color='white'
             >
                 {data.map( (i) => {
-                    return <GridItem key={i.id} w='100%' h={{base:'300px', md:'400px'}} position='relative'>
-                        <Text position='absolute' as='b' top='20px' left='20px' >{i.name}</Text>
-                        <Image src={i.image} alt='image demo' w='100%' h='100%' borderRadius='20px' />
-                    </GridItem>    
+                    return <Box key={i.id} display='flex' flexDirection={{ base: 'column', md: 'row' }} justifyContent={{md: 'space-between'}} w='100%' h={{base:'fit-content', md:'400px'}} gap={{base: '20px'}} >
+                        <Stack
+                            textAlign='left'
+                            w={{base: '100%', md:'50%'}}
+                        >
+                            <Text  as='b' fontSize='20px'>{i.name}</Text>
+
+                            {/* Tech */}
+                            <Flex
+                                gap={4}
+                            >
+                                <Box
+                                    backgroundColor='gray.300'
+                                    p='5px'
+                                    w='fit-content'
+                                    borderRadius='5px'
+                                    as='b'
+                                    color='black'
+                                >
+                                    React
+                                </Box>
+
+                                <Box
+                                    backgroundColor='gray.300'
+                                    p='5px'
+                                    w='fit-content'
+                                    borderRadius='5px'
+                                    as='b'
+                                    color='black'
+                                >
+                                    Redux Saga
+                                </Box>
+                            </Flex>
+
+                            {/* Colaborators */}
+                            <Text>
+                                <Text as='b'>Collaborators: </Text>Duy, Phúc
+                            </Text>
+
+                            {/* Discription */}
+                            <Text
+                                w={{base:'100%', md:'90%'}}
+                            >
+                                Trang web xây dựng nhằm mục đích có thể chạy code trực tuyến, và mỗi người có thể giải bài tập một cách trực quan hơn
+                            </Text>
+
+                        </Stack>
+                        <Image src={i.image} alt='image demo' w={{base: '100%', md:'50%'}} borderRadius='20px' />
+                    </Box>    
                 })}
                 
-            </Grid>
+            </Flex>
         </Box>
     );
 }

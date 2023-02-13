@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import Content from "./components/content/Content";
 import Project from "./components/Project/Project";
+import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 
 import axios from 'axios'
@@ -12,7 +13,7 @@ function App() {
   const refD = React.useRef();
   const refCon = React.useRef();
 
-  const [selectMenu, setSelectMenu] = React.useState(0);
+  const [selectMenu, setSelectMenu] = React.useState();
 
 
   const [demos, setDemos] = React.useState([]);
@@ -54,6 +55,7 @@ function App() {
       <Content getref={refCon} data={info} />
       {demos.length > 0 && <Project getref={refD} data={demos}/>}
       <Contact getref={refC} data={info} />
+      <Footer  />
     </div>
   );
 }
