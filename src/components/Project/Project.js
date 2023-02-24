@@ -6,7 +6,7 @@ function Project({data, getref}) {
         <Box
             ref={getref}
             // margin="20px 0px"
-            padding='60px 40px'
+            padding={{ base:'60px 40px', '2xl':'60px 280px'}}
             h='fit-content'
             bgGradient="linear(to-l, #02aab0, #00cdac)"
         >

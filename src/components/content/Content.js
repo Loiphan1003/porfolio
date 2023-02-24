@@ -13,7 +13,7 @@ export default function Content({data, getref}) {
   return (
     <Flex
       ref={getref}
-      p="0 40px"
+      p={{ base:"0 40px", '2xl': "0px 280px" }}
       flexDirection={{ base: "column-reverse", md: 'row' , lg: 'row' }}
       justifyContent={{base: 'center', md: 'space-between'}}
       alignItems='center'
@@ -21,8 +21,9 @@ export default function Content({data, getref}) {
       w="100%"
       h='100vh'
     >
+      {data.image !== '' && <>
 
-      <ScaleFade in={true} w='100%'>
+      <ScaleFade in={true}>
         <Box
           // marginTop={{ md:'10px'}}
           p="20px 30px"
@@ -32,7 +33,9 @@ export default function Content({data, getref}) {
           bgGradient="linear(to top right, #f7e9e8, #e9f0aa, #99aceb)"
           display="flex"
           flexDirection="column"
-          justifyContent="space-between"
+          justifyContent="center"
+          alignItems="center"
+          gap='40px'
         >
           <Box>
             <Text as='b' fontSize={{ base: '30px', md: '35px'}}>Hello, I’m Loi phan, a web developer.</Text>
@@ -46,7 +49,6 @@ export default function Content({data, getref}) {
         </Box>
       </ScaleFade>
       
-      {data.image !== '' && 
       <ScaleFade in={true}>
         <Box boxSize='100%' >
           <Image
@@ -57,7 +59,8 @@ export default function Content({data, getref}) {
             alt="LP"
           />
         </Box>
-      </ScaleFade>}
+      </ScaleFade>
+      </>}
     </Flex>
   );
 }

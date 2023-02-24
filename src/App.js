@@ -5,7 +5,7 @@ import Content from "./components/content/Content";
 import Project from "./components/Project/Project";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
-
+import { Box } from "@chakra-ui/react";
 import axios from 'axios'
 
 function App() {
@@ -50,13 +50,15 @@ function App() {
   }, [selectMenu])
 
   return (
-    <div className="App">
+    <Box className="App" 
+      // margin={{ '2xl': '0px 250px'}}
+    >
       <Header isSelect={selectMenu} select={setSelectMenu}/>
       <Content getref={refCon} data={info} />
       {demos.length > 0 && <Project getref={refD} data={demos}/>}
       <Contact getref={refC} data={info} />
       <Footer  />
-    </div>
+    </Box>
   );
 }
 

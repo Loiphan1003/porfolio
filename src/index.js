@@ -5,7 +5,7 @@ import App from "./App";
 import { ChakraProvider } from "@chakra-ui/react";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter} from "react-router-dom";
-import { Spinner } from "@chakra-ui/react";
+import { Spinner, extendTheme } from "@chakra-ui/react";
 
 
 // admin components
@@ -27,10 +27,17 @@ const router = createBrowserRouter([
   }
 ]);
 
+const theme = extendTheme({
+  fonts: {
+    body: "Be Vietnam Pro, sans-serif",
+  }
+})
+
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
       <RouterProvider router={router} fallbackElement={<Spinner size='xl' />}/>
     </ChakraProvider>
   // </React.StrictMode>
