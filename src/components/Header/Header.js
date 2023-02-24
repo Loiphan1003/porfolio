@@ -7,7 +7,7 @@ import { Flex, Text, Box } from "@chakra-ui/react";
 export default function Header({select, isSelect}) {
 
   return (
-    <Flex padding="0 40px" h={10} justifyContent="space-between">
+    <Flex padding={{ base:"0 40px", '2xl': "0 280px"}} h={10} justifyContent="space-between">
       <Box display="flex" dir="row" alignItems="center" gap={2} h={10}>
         <Box h={5} w={5} borderRadius="50%" bg="#24f66e" />
         <Text as="b">LP</Text>
