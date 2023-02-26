@@ -30,7 +30,6 @@ function Contact({ getref, data }) {
             )
             .then(
                 (result) => {
-                    console.log(result.text);
                     if (result.text === 'OK') {
                         return toast({
                             title: 'Send email success.',
