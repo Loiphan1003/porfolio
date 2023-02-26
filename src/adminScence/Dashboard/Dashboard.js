@@ -11,7 +11,7 @@ import Tables from "./Tables";
 function Dashboard(props) {
   const navigate = useNavigate();
 
-  const [select, setSelect] = React.useState('thongtin')
+  const [select, setSelect] = React.useState('info')
   
 
 
@@ -31,10 +31,10 @@ function Dashboard(props) {
       <Tabs>
         <TabList>
             <Tab
-                onClick={() => setSelect('thongtin')}
+                onClick={() => setSelect('info')}
             >Thông tin</Tab>
             <Tab
-                onClick={() => setSelect('sanpham')}
+                onClick={() => setSelect('demos')}
             >Sản phẩm</Tab>
         </TabList>
       </Tabs>

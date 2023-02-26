@@ -6,7 +6,7 @@ import Project from "./components/Project/Project";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import { Box } from "@chakra-ui/react";
-import axios from 'axios'
+import { getDocument } from "./config/firebase/firestore";
 
 function App() {
   const refC = React.useRef();
@@ -25,11 +25,9 @@ function App() {
   React.useEffect( () => {
 
     const fetchData = async () => {
-    await axios.get('https://porfolio-api-six.vercel.app/info')
-      .then((res) => setInfo(res.data))
+      getDocument('info').then((result) => setInfo(result));
 
-      await axios.get('https://porfolio-api-six.vercel.app/demo')
-      .then((res) => setDemos(res.data))
+      getDocument('demos').then((result) => setDemos(result));
     }
 
     fetchData();
@@ -46,7 +44,6 @@ function App() {
     if(selectMenu === 2){
       return refC.current?.scrollIntoView({behavior: 'smooth'});
     }
-    // console.log(refC);
   }, [selectMenu])
 
   return (
