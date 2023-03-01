@@ -9,7 +9,7 @@ function TechUse({ technologies }) {
     React.useEffect(() => {
         if (technologies !== undefined)
             setTechs(technologies.split(','));
-    }, [])
+    }, [technologies])
 
 
     return (
@@ -29,27 +29,6 @@ function TechUse({ technologies }) {
                    {i}
                 </Box>
             })}
-            {/* <Box
-                backgroundColor="gray.300"
-                p="5px"
-                w="fit-content"
-                borderRadius="5px"
-                as="b"
-                color="black"
-            >
-                React
-            </Box>
-
-            <Box
-                backgroundColor="gray.300"
-                p="5px"
-                w="fit-content"
-                borderRadius="5px"
-                as="b"
-                color="black"
-            >
-                Redux Saga
-            </Box> */}
         </Flex>
     );
 }
