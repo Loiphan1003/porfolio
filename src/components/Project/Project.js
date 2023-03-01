@@ -1,6 +1,8 @@
 import React from 'react';
 import { Flex, Stack, Box, Image, Text } from '@chakra-ui/react'
 import TechUse from '../assets/TechUse';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 function Project({ data, getref }) {
     return (
@@ -37,9 +39,10 @@ function Project({ data, getref }) {
                             {i.used !== undefined && <TechUse technologies={i.used} />}
 
                             {/* Colaborators */}
-                            <Text>
-                                <Text as='b'>Collaborators: </Text>Duy, Phúc
-                            </Text>
+                            {i.member !== undefined &&
+                                <Text>
+                                    <Text as='b'>Members: </Text>{i.member}
+                                </Text>}
 
                             {/* Discription */}
                             <Text
@@ -47,6 +50,22 @@ function Project({ data, getref }) {
                             >
                                 {i.discription}
                             </Text>
+
+                            {i.githubLink !== undefined &&
+                                <Box
+                                    borderRadius="50%"
+                                    h="fit-content"
+                                    w="fit-content"
+                                    textAlign='center'
+                                    _hover={{
+                                        bgColor: 'black',
+                                        color: "white",
+                                        cursor: 'pointer'
+                                    }}
+                                    onClick={() => window.open(i.githubLink, "_blank")}
+                                >
+                                    <FontAwesomeIcon icon={faGithub} size="2xl" />
+                                </Box>}
 
                         </Stack>
                         <Image src={i.image} alt='image demo' w={{ base: '100%', md: '50%' }} borderRadius='20px' />

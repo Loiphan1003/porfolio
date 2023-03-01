@@ -13,13 +13,13 @@ export default function Content({data, getref}) {
   return (
     <Flex
       ref={getref}
-      p={{ base:"20px 40px", '2xl': "0px 280px" }}
-      flexDirection={{ base: "column-reverse", md: 'row' , lg: 'row' }}
-      justifyContent={{base: 'flex-end', md: 'space-between'}}
+      p={{ base:"20px 40px",'2xl': "0px 280px" }}
+      flexDirection={{ base: "column-reverse", md: 'column-reverse' , lg: 'row' }}
+      justifyContent={{base: 'flex-end',md: 'flex-end', lg: 'space-between'}}
       alignItems='center'
-      gap={{ base: '20px'}}
+      gap={{ base: '20px', md: '20px'}}
       w="100%"
-      h='100vh'
+      h={{base:'100vh', md:'fit-content', lg:'100vh'}}
     >
       {data.image !== '' && <>
 
@@ -27,7 +27,7 @@ export default function Content({data, getref}) {
         <Box
           // marginTop={{ md:'10px'}}
           p={{base: "30px 30px", md:"20px 30px"}}
-          w={{ base: "100%", md: "420px", lg: "50rem" }}
+          w={{ base: "100%", md: "100%", lg: "50rem" }}
           h={{ base: "fit-content", md: "400px", lg: "400px" }}
           borderRadius="30px"
           bgGradient="linear(to top right, #f7e9e8, #e9f0aa, #99aceb)"
@@ -50,7 +50,11 @@ export default function Content({data, getref}) {
       </ScaleFade>
       
       <ScaleFade initialScale={0.9} in={true}>
-        <Box boxSize='100%' >
+        <Box 
+          // boxSize={{base:'100%', md: '100%'}} 
+          h='fit-content'
+          w='100%'
+        >
           <Image
             borderRadius="30px"
             h={{ base: "auto", md: "100%", lg: "400px" }}

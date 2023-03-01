@@ -1,5 +1,5 @@
 import { firestore } from "./firebaseConfig";
-import { doc, addDoc, setDoc, getDocs, collection } from "firebase/firestore";
+import { doc, setDoc, getDocs, collection } from "firebase/firestore";
 
 export const getDocument = async (name) => {
 
@@ -18,11 +18,11 @@ export const updateDocument = async (nameColection, object) => {
     
     try {
 
-        let{id, name, email, used, discription, image} = object;
+        let{id, name, email, used, member, discription, image, githubLink} = object;
 
         // console.log(object)
         await setDoc(doc(firestore, nameColection, id),  
-         nameColection === 'info' ? {name, email, image} : {name, used, discription, image}
+         nameColection === 'info' ? {name, email, image} : {name, used, member, discription, image, githubLink}
         )
         return true;
     } catch (error) {

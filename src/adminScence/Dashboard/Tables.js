@@ -35,6 +35,8 @@ import { v4 } from "uuid";
 import { getDocument, updateDocument } from "../../config/firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import CreateModal from "../CreateModal/CreateModal";
+import Demo from "../../Models/Demo";
+
 
 function Tables({ type }) {
   const [colection, setColection] = React.useState();
@@ -50,9 +52,11 @@ function Tables({ type }) {
   const [product, setProduct] = React.useState({
     id: "",
     name: "",
+    member: '',
     used: "",
     discription: "",
     image: "",
+    githubLink: '',
   });
 
   React.useEffect(() => {
@@ -103,7 +107,7 @@ function Tables({ type }) {
 
       // 'file' comes from the Blob or File API
       await uploadBytes(storageRef, file).then((snapshot) => {
-        getDownloadURL(snapshot.ref).then((url) => {
+        getDownloadURL(snapshot.ref).then(async (url) => {
 
           let object =
             type === "info"
@@ -113,13 +117,15 @@ function Tables({ type }) {
                 image: url,
                 email: edit.email,
               }
-              : {
-                id: product.id,
-                name: product.name,
-                used: product.used,
-                discription: product.discription,
-                image: url,
-              };
+              : new Demo(product.id, product.name, product.used, product.member, product.discription, url, product.githubLink)
+
+          // {
+          //   id: product.id,
+          //   name: product.name,
+          //   used: product.used,
+          //   discription: product.discription,
+          //   image: url,
+          // };
 
           return updateDocument(type, object).then((result) => {
             if (result) console.log(result)
@@ -136,16 +142,11 @@ function Tables({ type }) {
             image: edit.image,
             email: edit.email,
           }
-          : {
-            id: product.id,
-            name: product.name,
-            used: product.used,
-            discription: product.discription,
-            image: product.image,
-          };
+          : new Demo(product.id, product.name, product.used, product.member, product.discription, product.image, product.githubLink)
+
 
       return updateDocument(type, object).then((result) => {
-        if (result) console.log(result)
+        if (result) console.log(object)
         else alert("lỗi !!!")
       })
     }
@@ -157,9 +158,9 @@ function Tables({ type }) {
       .post("https://porfolio-api-six.vercel.app/demo/delete", params)
       .then((res) => {
         if (res.data.message === "Xóa thành công") {
-          return colection.filter((i) => {
+          return setColection(colection.filter((i) => {
             return i.id !== params.id;
-          });
+          }));
         }
       });
   }
@@ -269,6 +270,13 @@ function Tables({ type }) {
                     onChange={(e) => handleChange(e, 'text', 'demos')}
                   />
 
+                  <FormLabel>Thành viên</FormLabel>
+                  <Input
+                    name="member"
+                    defaultValue={product.member}
+                    onChange={(e) => handleChange(e, 'text', 'demos')}
+                  />
+
                   <FormLabel>Mô tả</FormLabel>
                   <Textarea
                     name="discription"
@@ -282,10 +290,17 @@ function Tables({ type }) {
                     src={displayImage !== "" ? displayImage : product.image}
                     alt="avatar"
                   />
-                  <Input 
+                  <Input
                     name="image"
                     type="file"
-                    // defaultValue={product.image} 
+                  // defaultValue={product.image} 
+                  />
+
+                  <FormLabel>Github link</FormLabel>
+                  <Input
+                    name="githubLink"
+                    defaultValue={product.githubLink}
+                    onChange={(e) => handleChange(e, 'text', 'demos')}
                   />
                 </>
               ) : (
