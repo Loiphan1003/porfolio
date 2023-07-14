@@ -1,10 +1,9 @@
 "use client"
 import React from 'react';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { InfoLayout } from '@/components/layouts';
 
-const page = () => {
+const Me = () => {
 
   const router = useRouter();
 
@@ -20,7 +19,7 @@ const page = () => {
       >About me</h1>
 
       <section>
-        <p>Hey, I'm Tania! I'm a software developer working in Chicago. Welcome to my spot on the
+        <p>Hey, I&apos;m Tania! I&apos;m a software developer working in Chicago. Welcome to my spot on the
           web for my projects, tutorials, art, musings, and anything else I want to show the world.
           Check out the projects page to see a highlight of my open-source work, and the blog for
           my tutorials and more.
@@ -91,4 +90,4 @@ const page = () => {
   )
 }
 
-export default page;
+export default Me;
