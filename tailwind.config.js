@@ -9,6 +9,7 @@ module.exports = {
   theme: {
     screens: {
       'md': '700px',
+      'lg': '1060px',
     },
     extend: {
       colors: {
@@ -22,6 +23,7 @@ module.exports = {
           cardBackgroundColor: '#1f1f1f',
           buttonBackgroundColor: '#252525',
           borderColor: '#2c2c2c',
+          marker: '#e77cc7'
 
         },
         light: {

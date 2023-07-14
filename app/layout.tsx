@@ -42,7 +42,7 @@ function RootLayout({
               </section>
 
               <footer
-                className="flex w-[100%] py-[48px] md:py-0 box-border h-fit flex-col justify-center items-center"
+                className="flex w-[100%] mt-[30px] py-[48px] md:py-0 box-border h-fit flex-col justify-center items-center"
               >
                 <ul
                   className="flex flex-row gap-3"
