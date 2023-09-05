@@ -1,13 +1,10 @@
 "use client";
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { updateThemeState } from '@/redux/reducer/themeSlice';
 import { useTheme } from 'next-themes';
 
 
 const ThemeButton = () => {
 
-    // const dispatch = useDispatch();
     const {theme, setTheme} = useTheme();
 
     useEffect(() => {

@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import ThemeButton from '../ThemeButton'
 import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -49,7 +49,7 @@ export const Navbar = () => {
                         className="md:w-[25px] md:h-[25px]"
                         alt='header'
                     />
-                    <p className="text-[.9rem] md:text-[19px] font-bold not-italic leading-[19px]" >Loi Phan</p>
+                    <p className="text-[.9rem] md:text-[19px] font-bold not-italic leading-[19px]" >Lợi Phan</p>
                 </div>
 
                 <ul

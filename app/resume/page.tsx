@@ -43,15 +43,17 @@ const Resume = () => {
                 <div
                     className="mt-[15px] pl-[24px] box-border flex flex-col gap-[7px]"
                 >
-                    <p><span className='font-bold' >Languages</span> - Node.js, JavaScript (React/Redux, Vue), TypeScript, GraphQL, SQL, PHP,
-                        Python, Bash, HTML5, CSS3, JSON</p>
+                    <p><span className='font-bold' >Languages</span> - Node.js, JavaScript (React/Redux, NextJS), TypeScript, SQL,
+                        HTML5, CSS3, JSON</p>
 
                     <p><span className='font-bold' >Concepts</span> - Web Application Development, Design Patterns (REST API Design, MVC),
-                        Databases (Postgres, SQL), Authentication and Security (OAuth2, OpenID Connect,
-                        SSO, JWT), Linux/UNIX Administration, Webpack, Electron, Version Control (Git), AWS
-                        Infrastructure (EC2, Route 53, RDS), Testing (Unit, Component, Integration, End-to-
+                        Databases (SQL), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit, Component, Integration, End-to-
                         end)</p>
 
+                    <p><span className='font-bold' >Version Control</span> - Git</p>
+
+                    <p><span className='font-bold' >Tools</span> - Figma, Postman
+                    </p>
                 </div>
 
                 <Heading
