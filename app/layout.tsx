@@ -5,8 +5,9 @@ import { Inter } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
 import { Navbar } from '@/components';
 import Image from 'next/image'
-import { facebookLogo, instagramLogo, githubLogo } from '@/assets/images';
+import { facebookLogo, githubLogo } from '@/assets/images';
 import { Providers } from '@/redux/Providers';
+import { openNewPage } from '@/utils';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -17,6 +18,9 @@ function RootLayout({
   children: React.ReactNode
 }) {
 
+  const handleFooterClick = (url: string) => {
+    openNewPage(url)
+  }
   
   return (
     <html lang="en" suppressHydrationWarning>
@@ -48,7 +52,8 @@ function RootLayout({
                     className="flex flex-row gap-3"
                   >
                     <li
-                      className="flex flex-row items-center gap-2"
+                      className="flex flex-row items-center gap-2 hover:cursor-pointer"
+                      onClick={() => handleFooterClick("https://github.com/Loiphan1003")}
                     >
                       <p>
                         GitHub
@@ -60,19 +65,8 @@ function RootLayout({
                       />
                     </li>
                     <li
-                      className="flex flex-row items-center gap-2"
-                    >
-                      <p>
-                        Instagram
-                      </p>
-
-                      <Image
-                        src={instagramLogo}
-                        alt='Instagram'
-                      />
-                    </li>
-                    <li
-                      className="flex flex-row items-center gap-2"
+                      className="flex flex-row items-center gap-2 hover:cursor-pointer"
+                      onClick={() => handleFooterClick("https://www.facebook.com/profile.php?id=100004241627166")}
                     >
                       <p>
                         Facebook

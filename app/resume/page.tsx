@@ -19,7 +19,7 @@ const Resume = () => {
                     className="pl-[24px] box-border"
                 >
                     <li>Email - hello [at] phanvuloi.it@gmail.com</li>
-                    <li>GitHub - loiphan1003</li>
+                    <li>GitHub - Loiphan1003</li>
                 </ul>
 
                 <Heading text='Experience' />
