@@ -49,15 +49,17 @@ const Me = () => {
           Software
         </h3>
         <ul
-          className="mt-[20px] pl-[24px] flex flex-col gap-[7px] box-border list-disc dark:marker:text-dark-marker"
+          className="mt-[20px] pl-[24px] flex flex-col gap-[7px] 
+          box-border list-disc marker:text-dark-marker dark:text-dark-fontColorBase
+          text-light-fontColorBase"
         >
-          <li className="text-dark-fontColorBase" >This website is hosted on Vercel and uses the NextJS framework</li>
-          <li className="text-dark-fontColorBase" >Coding: <p className="inline-block" >
+          <li>This website is hosted on Vercel and uses the NextJS framework</li>
+          <li>Coding: <p className="inline-block" >
             <span className="text-[#9CA0FA] underline underline-offset-2" >Visual Studio Code </span> with
             <span className="text-[#9CA0FA] underline underline-offset-2" > GitHub Dark</span>
           </p></li>
-          <li className="text-dark-fontColorBase" >Terminal: <p className="inline-block text-[#9CA0FA] underline underline-offset-2" >Windows Terminal</p></li>
-          <li className="text-dark-fontColorBase" >Notes: <p className="inline-block text-[#9CA0FA] underline underline-offset-2" >Notion</p></li>
+          <li>Terminal: <p className="inline-block text-[#9CA0FA] underline underline-offset-2" >Windows Terminal</p></li>
+          <li>Notes: <p className="inline-block text-[#9CA0FA] underline underline-offset-2" >Notion</p></li>
         </ul>
 
       </section>

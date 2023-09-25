@@ -2,6 +2,7 @@ import React from 'react';
 import { IBM_Plex_Mono } from 'next/font/google';
 import { Project } from '@/types';
 import { openNewPage } from '@/utils';
+import { Tag } from '../Tag';
 
 const ibm_plex_mono = IBM_Plex_Mono({ subsets: ['latin'], weight: '400' });
 
@@ -16,6 +17,12 @@ export const ProjectItem = (props: ProjectItemProps) => {
         if (githubLink === undefined || githubLink === '') return;
         return openNewPage(githubLink);
     }
+
+    const handleClickTags = (tag: string) => {
+        console.log(tag);
+        
+    }
+
 
     return (
         <div
@@ -44,22 +51,11 @@ export const ProjectItem = (props: ProjectItemProps) => {
             </div>
 
             <div className="w-auto mt-[15px] flex flex-row gap-[8px]" >
-                {/* <div
-                    className="w-fit h-fit border border-soli border-[#2C2C2C] rounded-[6px] bg-[#252525]
-                    pt-[8px] pb-[9px] pl-[11px] pr-[12px] box-border"
-                >
-                    <p className="text-[13px] text-[#E6E6E6] font-medium not-italic leading-[14.4px]">Article</p>
-                </div> */}
-
                 {props.data.gitHubLink &&
-                    <div
-                        className="w-fit h-fit border border-soli border-[#2C2C2C] rounded-[6px] bg-[#252525]
-                        pt-[8px] pb-[9px] pl-[11px] pr-[12px] box-border hover:cursor-pointer"
-                        onClick={() => handleClickName(props.data.gitHubLink)}
-
-                    >
-                        <p className="text-[13px] text-[#E6E6E6] font-medium not-italic leading-[14.4px]">Source</p>
-                    </div>
+                    <Tag 
+                        label='Source'
+                        onClick={(value) => handleClickTags(value)}
+                    />
                 }
             </div>
         </div>

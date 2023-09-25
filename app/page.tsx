@@ -7,6 +7,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProjects } from '@/redux/reducer/projectSlice/asyncThunk';
 import { RootState } from '@/redux/store';
+import { Button } from '@/components/Button';
 
 
 export default function Home() {
@@ -61,13 +62,7 @@ export default function Home() {
         >
           <p className=" dark:text-dark-fontColorHeading text-light-fontColorHeading text-[1.7rem] md:text-[32px] font-bold leading-[35px] not-italic tracking-[-0.8px]" >Projects</p>
 
-          <div
-            className="w-[92px] h-[42px] flex justify-center items-center dark:bg-dark-buttonBackgroundColor bg-light-buttonBackgroundColor text-[14px] dark:text-dark-fontColorBase text-light-fontColorBase font-medium leading-[16px] not-italic
-            rounded-[6px] border border-solid dark:border-dark-borderColor border-light-borderColor hover:cursor-pointer"
-            onClick={() => handleViewAll('projects')}
-          >
-            View all
-          </div>
+          <Button label='View all' onClick={() => handleViewAll('projects')}  />
         </div>
 
         <div

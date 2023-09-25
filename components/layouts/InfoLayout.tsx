@@ -19,7 +19,9 @@ const InfoLayout = ({ children }: { children: React.ReactNode }) => {
                 className="w-full lg:max-w-[300px]"
             >
                 <div
-                    className="my-[1rem] p-[25px] box-border flex flex-col gap-2 rounded-md border dark:border-dark-borderColor bg-[#1F1F1F]"
+                    className="my-[1rem] p-[25px] box-border flex flex-col gap-2 
+                    rounded-md border dark:border-dark-borderColor dark:bg-[#1F1F1F]
+                    "
                 >
                     <h2>Me</h2>
                     <Image
