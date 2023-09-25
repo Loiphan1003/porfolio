@@ -19,8 +19,8 @@ export const ProjectItem = (props: ProjectItemProps) => {
     }
 
     const handleClickTags = (tag: string) => {
-        console.log(tag);
-        
+        // console.log(tag);
+        if(tag.toLocaleLowerCase() === 'source' && props.data.gitHubLink) return openNewPage(props.data?.gitHubLink)
     }
 
 
