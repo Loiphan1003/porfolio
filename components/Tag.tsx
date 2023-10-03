@@ -1,8 +1,8 @@
 import React from 'react'
 
 type Props = {
-    label: 'Source' | 'Demo' | 'Article',
-    onClick: (value: string) => void
+    label: 'source' | 'demo' | 'article',
+    onClick: () => void
 }
 
 
@@ -15,12 +15,12 @@ export const Tag = (props: Props) => {
             dark:border-[#2C2C2C] rounded-[6px] dark:bg-dark-buttonBackgroundColor bg-light-buttonBackgroundColor
             pt-[8px] pb-[9px] pl-[11px] pr-[12px] box-border 
             hover:cursor-pointer dark:hover:border-white hover:border-black transition-colors ease-in-out delay-[45ms]"
-            onClick={() => props.onClick(props.label)}
+            onClick={() => props.onClick()}
 
         >
             <p className="text-[13px] dark:text-dark-fontColorBase text-light-fontColorBase font-medium not-italic leading-[14.4px]">{props.label}</p>
 
-            {props.label === 'Source' &&
+            {props.label === 'source' &&
                 <svg
                     className='dark:fill-white fill-light-fontColorBase'
                     xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ export const Tag = (props: Props) => {
                 </svg>
             }
 
-            {props.label === 'Demo' &&
+            {props.label === 'demo' &&
 
                 <svg
                     className='fill-white'

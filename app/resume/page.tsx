@@ -46,13 +46,14 @@ const Resume = () => {
                     <p><span className='font-bold' >Languages</span> - Node.js, JavaScript (React/Redux, NextJS), TypeScript, SQL,
                         HTML5, CSS3, JSON</p>
 
-                    <p><span className='font-bold' >Concepts</span> - Web Application Development, Design Patterns (REST API Design, MVC),
-                        Databases (SQL), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit, Component, Integration, End-to-
+                    <p><span className='font-bold' >Concepts</span> - Web Application Development, Design Patterns (REST API Design, MVC), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit, Component, Integration, End-to-
                         end)</p>
+
+                    <p><span className='font-bold' >Database</span> - MySQL, SQL Server, MongoDB</p>
 
                     <p><span className='font-bold' >Version Control</span> - Git</p>
 
-                    <p><span className='font-bold' >Tools</span> - Figma, Postman
+                    <p><span className='font-bold' >Tools</span> - Figma, Postman, Visual Studio Code, Visual Studio
                     </p>
                 </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { IBM_Plex_Mono } from 'next/font/google';
-import { Project } from '@/types';
+import { Project, TagType } from '@/types';
 import { openNewPage } from '@/utils';
 import { Tag } from '../Tag';
 
@@ -13,14 +13,14 @@ interface ProjectItemProps {
 export const ProjectItem = (props: ProjectItemProps) => {
 
 
-    const handleClickName = (githubLink: string | undefined) => {
-        if (githubLink === undefined || githubLink === '') return;
-        return openNewPage(githubLink);
+    const handleClickName = (tags: TagType[]) => {
+        tags.forEach((item) => {
+            if(item.name == 'source') return openNewPage(item.link);
+        })
     }
 
-    const handleClickTags = (tag: string) => {
-        // console.log(tag);
-        if(tag.toLocaleLowerCase() === 'source' && props.data.gitHubLink) return openNewPage(props.data?.gitHubLink)
+    const handleClickTags = (tag: TagType) => {
+        return openNewPage(tag.link)
     }
 
 
@@ -39,7 +39,7 @@ export const ProjectItem = (props: ProjectItemProps) => {
                 <p
                     className="dark:text-dark-fontColorHeading text-light-fontColorHeading text-[17px] font-medium leading-[23px] 
                     not-italic hover:cursor-pointer hover:underline"
-                    onClick={() => handleClickName(props.data.gitHubLink)}
+                onClick={() => handleClickName(props.data.tags)}
                 >
                     {props.data.name}
                 </p>
@@ -51,12 +51,13 @@ export const ProjectItem = (props: ProjectItemProps) => {
             </div>
 
             <div className="w-auto mt-[15px] flex flex-row gap-[8px]" >
-                {props.data.gitHubLink &&
-                    <Tag 
-                        label='Source'
-                        onClick={(value) => handleClickTags(value)}
+                {props.data.tags && props.data.tags.map((item) => (
+                    <Tag
+                        key={item.name}
+                        label={item.name}
+                        onClick={() => handleClickTags(item)}
                     />
-                }
+                ))}
             </div>
         </div>
     )
