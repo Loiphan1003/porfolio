@@ -27,11 +27,14 @@ const Resume = () => {
                     className='mt-[22px] flex flex-col gap-[55px]'
                 >
                     <DescribeInfo
-                        position="Intern Front End Developer"
-                        nameCompany="Alta Software"
-                        timeStart='April 2023'
-                        timeEnd='June 2023'
-                        description=''
+
+                        data={{
+                            position: "Intern Front End Developer",
+                            nameCompany:"Alta Software",
+                            timeStart:'April 2023',
+                            timeEnd:'June 2023',
+                            description: "Create a user interface based on blueprints available on Figma. Technologies used during the internship: ReactJS, Firebase, Typescript, Redux"
+                        }}
                     />
 
                 </div>
@@ -43,18 +46,17 @@ const Resume = () => {
                 <div
                     className="mt-[15px] pl-[24px] box-border flex flex-col gap-[7px]"
                 >
-                    <p><span className='font-bold' >Languages</span> - Node.js, JavaScript (React/Redux, NextJS), TypeScript, SQL,
-                        HTML5, CSS3, JSON</p>
+                    <li><span className='font-bold' >Languages</span> - Node.js, C#, JavaScript (React/Redux, NextJS), TypeScript, SQL,
+                        HTML5, CSS3, JSON</li>
 
-                    <p><span className='font-bold' >Concepts</span> - Web Application Development, Design Patterns (REST API Design, MVC), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit, Component, Integration, End-to-
-                        end)</p>
+                    <li><span className='font-bold' >Concepts</span> - Web Application Development, Design Patterns (REST API Design, MVC), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit)</li>
 
-                    <p><span className='font-bold' >Database</span> - MySQL, SQL Server, MongoDB</p>
+                    <li><span className='font-bold' >Database</span> - MySQL, SQL Server, MongoDB</li>
 
-                    <p><span className='font-bold' >Version Control</span> - Git</p>
+                    <li><span className='font-bold' >Version Control</span> - Git</li>
 
-                    <p><span className='font-bold' >Tools</span> - Figma, Postman, Visual Studio Code, Visual Studio
-                    </p>
+                    <li><span className='font-bold' >Tools</span> - Figma, Postman, Visual Studio Code, Visual Studio
+                    </li>
                 </div>
 
                 <Heading
@@ -65,11 +67,13 @@ const Resume = () => {
                     className='mt-[22px] flex flex-col gap-[55px]'
                 >
                     <DescribeInfo
-                        position="Bachelor of University"
-                        nameCompany='Hutech University'
-                        timeStart='2019'
-                        timeEnd='2023'
-                        description=''
+                        data={{
+                            position:"Bachelor of University",
+                            nameCompany:'Hutech University',
+                            timeStart:'2019',
+                            timeEnd:'2023',
+                            description:''
+                        }}
                     />
                 </div>
 

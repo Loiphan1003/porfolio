@@ -24,7 +24,6 @@ module.exports = {
           buttonBackgroundColor: '#252525',
           borderColor: '#2c2c2c',
           marker: '#e77cc7'
-
         },
         light: {
           bg: '#eeeeee',

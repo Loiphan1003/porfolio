@@ -8,7 +8,6 @@ type Props = {
 
 export const Tag = (props: Props) => {
 
-
     return (
         <div
             className="w-fit h-fit flex flex-row gap-2 border border-solid 
@@ -34,7 +33,7 @@ export const Tag = (props: Props) => {
             {props.label === 'demo' &&
 
                 <svg
-                    className='fill-white'
+                    className='dark:fill-white'
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"
                     viewBox="0 0 512 512"

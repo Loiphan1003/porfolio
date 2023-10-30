@@ -35,7 +35,7 @@ function RootLayout({
             >
               <div
                 className="md:mx-auto max-w-[1160px] min-h-screen w-[100%]  md:py-[48px]
-              px-[16px] md:px-[30px] box-border 2xl:px-[32px] "
+                px-[16px] md:px-[30px] box-border 2xl:px-[32px] "
               >
                 <Navbar></Navbar>
 
