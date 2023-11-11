@@ -27,7 +27,7 @@ export default function Home() {
     return router.push(pathName);
   }
 
-  
+
   return (
     <React.Fragment>
       <section
@@ -36,9 +36,17 @@ export default function Home() {
         <div
           className="md:pt-[79px] md:pr-[83px] md:pb-[48px] box-border"
         >
-          <h1 className="text-[2.2rem] md:text-[48px] dark:text-dark-fontColorHeading text-light-fontColorHeading  leading-[53px] font-bold not-italic">Hi, I&apos;m Lợi</h1>
+          <h1
+            className="relative w-[max-content] text-[2.2rem] md:text-[3rem] dark:text-dark-fontColorHeading
+            text-light-fontColorHeading font-bold not-italic before:absolute 
+            before:inset-0 dark:before:bg-dark-bg before:text-light-fontColorHeading
+            before:animate-typing"
+          >
+            Hi, I&apos;m Lợi ✌
+          </h1>
+
           <div
-            className="mt-[1.5rem] md:mt-[25px] text-[1rem] md:text-[19px] dark:text-dark-fontColorBase text-light-fontColorBase font-medium leading-[31px] not-italic tracking-[-0.16px]"
+            className="mt-[1.5rem] md:mt-[25px] text-[1rem] md:text-[1.2rem] dark:text-dark-fontColorBase text-light-fontColorBase font-medium leading-[31px] not-italic tracking-[-0.16px]"
           >
             <p>Welcome to my portfolio</p>
             <p className="md:mt-[20px]">I&apos;m a frontend developer in Ho Chi Minh City. I like listening music and gaming.</p>
@@ -60,9 +68,9 @@ export default function Home() {
         <div
           className="flex flex-row justify-between items-center"
         >
-          <p className=" dark:text-dark-fontColorHeading text-light-fontColorHeading text-[1.7rem] md:text-[32px] font-bold leading-[35px] not-italic tracking-[-0.8px]" >Projects</p>
+          <p className=" dark:text-dark-fontColorHeading text-light-fontColorHeading text-[1.7rem] md:text-[2rem] font-bold leading-[35px] not-italic tracking-[-0.8px]" >Projects</p>
 
-          <Button label='View all' onClick={() => handleViewAll('projects')}  />
+          <Button label='View all' onClick={() => handleViewAll('projects')} />
         </div>
 
         <div

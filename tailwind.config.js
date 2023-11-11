@@ -41,6 +41,16 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      animation: {
+        'typing': 'typing 1.5s steps(30) forwards',
+      },
+      keyframes: {
+        typing: {
+          to: {
+            left: '100%',
+          }
+        },
+      },
     },
   },
   plugins: [],

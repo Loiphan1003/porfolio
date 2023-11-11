@@ -18,12 +18,12 @@ export default function DescribeInfo({ data }: Props) {
         <div
         >
             <h3
-                className="dark:text-dark-fontColorHeading text-[26.8px] not-italic font-medium leading-[31.68px] tracking-[-0.32px]"
+                className="dark:text-dark-fontColorHeading text-[1.7rem] not-italic font-medium leading-[31.68px] tracking-[-0.32px]"
             >
                 {data.position}
             </h3>
             <p
-                className="mt-[19px] dark:text-[#E6E6E6] text-[16.8px] font-normal leading-[27.3px] tracking-[-0.16px]"
+                className="mt-[19px] dark:text-[#E6E6E6] text-[1rem] font-normal leading-[27.3px] tracking-[-0.16px]"
             >
                 <span
                     className="font-bold"

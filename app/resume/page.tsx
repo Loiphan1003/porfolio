@@ -7,7 +7,7 @@ const Resume = () => {
     return (
         <InfoLayout>
             <h1
-                className="dark:text-dark-fontColorHeading text-[48px] font-bold not-italic leading-[52.8px]"
+                className="dark:text-dark-fontColorHeading text-[3rem] font-bold not-italic leading-[52.8px]"
             >
                 Lợi Phan
             </h1>

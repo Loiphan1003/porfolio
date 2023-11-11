@@ -16,7 +16,7 @@ const Me = () => {
     <InfoLayout>
 
       <h1
-        className="text-[48px] not-italic font-bold leading-[53px]"
+        className="text-[3rem] not-italic font-bold leading-[53px]"
       >About me</h1>
 
       <section>
@@ -35,7 +35,7 @@ const Me = () => {
         </ul>
 
         <h2
-          className="mt-[55px] text-[31px] dark:text-dark-fontColorHeading text-light-fontColorHeading font-bold not-italic leading-[35.2px]
+          className="mt-[55px] text-[1.9rem] dark:text-dark-fontColorHeading text-light-fontColorHeading font-bold not-italic leading-[35.2px]
             tracking-[-0.8px]
             after:content-[''] after:block after:w-full after:h-[0.5px] after:bg-[#2C2C2C] after:mt-[7.5px]"
         >
@@ -43,7 +43,7 @@ const Me = () => {
         </h2>
 
         <h3
-          className="mt-[23px] text-[25.8px] not-italic font-medium leading-[31.68px]
+          className="mt-[23px] text-[1.6rem] not-italic font-medium leading-[31.68px]
             tracking-[-0.32px]"
         >
           Software
