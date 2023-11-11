@@ -43,6 +43,17 @@ export const getProjects = createAsyncThunk(
                             link: 'https://joyful-halva-dbff04.netlify.app/'
                         }
                     ]
+                },
+                {
+                    yearBuild: 2023,
+                    name: "Pomodoro",
+                    description: "Applies Pomodoro to help you increase your study and work productivity.",
+                    tags: [
+                        {
+                            name: 'demo',
+                            link: 'https://pomodoro-bay-nu.vercel.app/'
+                        }
+                    ]
                 }
             ]
             return project;

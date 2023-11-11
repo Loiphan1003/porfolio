@@ -17,7 +17,7 @@ export const Tag = (props: Props) => {
             onClick={() => props.onClick()}
 
         >
-            <p className="text-[13px] dark:text-dark-fontColorBase text-light-fontColorBase font-medium not-italic leading-[14.4px]">{props.label}</p>
+            <p className="text-[0.8rem] capitalize dark:text-dark-fontColorBase text-light-fontColorBase font-medium not-italic leading-[14.4px]">{props.label}</p>
 
             {props.label === 'source' &&
                 <svg

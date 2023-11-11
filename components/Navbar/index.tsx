@@ -49,7 +49,7 @@ export const Navbar = () => {
                         className="md:w-[25px] md:h-[25px]"
                         alt='header'
                     />
-                    <p className="text-[.9rem] md:text-[19px] font-bold not-italic leading-[19px]" >Lợi Phan</p>
+                    <p className="text-[0.9rem] md:text-[1.2rem] font-bold not-italic leading-[19px]" >Lợi Phan</p>
                 </div>
 
                 <ul
@@ -58,7 +58,7 @@ export const Navbar = () => {
                     {NavbarElement.map((element) => (
                         <li
                             key={element.text}
-                            className={`text-[.9rem] md:text-[14.8px] relative font-medium not-italic leading-[27px] hover:cursor-pointer 
+                            className={`text-[.9rem] md:text-[1rem] relative font-medium not-italic leading-[27px] hover:cursor-pointer 
                             ${pathName === element.path ?
                             "after:content-[''] after:block after:absolute after:w-[100%] after:h-1 after:bg-purple-400  after:rounded-[20%]" 
                             : "hover:after:content-[''] hover:after:block hover:after:absolute hover:after:w-[100%] hover:after:h-1 hover:after:bg-purple-400  hover:after:rounded-[20%]"}`}

@@ -26,25 +26,25 @@ export const ProjectItem = (props: ProjectItemProps) => {
 
     return (
         <div
-            className="w-auto h-auto rounded-[6px] border border-solid dark:border-dark-borderColor border-light-borderColor
+            className="flex flex-col justify-between w-auto h-auto rounded-[6px] border border-solid dark:border-dark-borderColor border-light-borderColor
             p-[25px] box-border dark:bg-dark-cardBackgroundColor bg-light-cardBackgroundColor"
         >
             <div>
                 <p
-                    className={`${ibm_plex_mono.className} text-[#F57AD0] text-[14px] font-normal leading-[23px] tracking-[-0.16px] not-italic`}
+                    className={`${ibm_plex_mono.className} text-[#F57AD0] text-[0.8rem] font-normal leading-[23px] tracking-[-0.16px] not-italic`}
                 >
                     {props.data.yearBuild}
                 </p>
 
                 <p
-                    className="dark:text-dark-fontColorHeading text-light-fontColorHeading text-[17px] font-medium leading-[23px] 
+                    className="dark:text-dark-fontColorHeading text-light-fontColorHeading text-[1rem] font-medium leading-[23px] 
                     not-italic hover:cursor-pointer hover:underline"
                 onClick={() => handleClickName(props.data.tags)}
                 >
                     {props.data.name}
                 </p>
                 <p
-                    className="dark:text-dark-fontColorMuted text-light-fontColorMuted text-[14px] font-normal leading-[21px] tracking-[-0.16px] not-italic"
+                    className="dark:text-dark-fontColorMuted text-light-fontColorMuted text-[0.8rem] font-normal leading-[21px] tracking-[-0.16px] not-italic"
                 >
                     {props.data.description}
                 </p>
