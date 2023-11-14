@@ -55,9 +55,9 @@ export default function Home() {
 
         <Image
           src={myImage}
-          width={400}
-          height={400}
-          className="h-[100%] max-w-[250px] md:max-w-[100%] rounded"
+          width={0}
+          height={0}
+          className="h-[100%]  md:w-[250px] max-w-[250px] md:max-w-[100%] rounded-lg"
           alt="Picture of the author"
         />
       </section>
