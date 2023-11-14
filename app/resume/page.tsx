@@ -1,6 +1,7 @@
 import DescribeInfo from '@/components/DescribeInfo';
 import Heading from '@/components/Heading';
 import { InfoLayout } from '@/components/layouts';
+import { certificate } from '@/data';
 import React from 'react'
 
 const Resume = () => {
@@ -30,9 +31,9 @@ const Resume = () => {
 
                         data={{
                             position: "Intern Front End Developer",
-                            nameCompany:"Alta Software",
-                            timeStart:'April 2023',
-                            timeEnd:'June 2023',
+                            nameCompany: "Alta Software",
+                            timeStart: 'April 2023',
+                            timeEnd: 'June 2023',
                             description: "Create a user interface based on blueprints available on Figma. Technologies used during the internship: ReactJS, Firebase, Typescript, Redux"
                         }}
                     />
@@ -68,13 +69,37 @@ const Resume = () => {
                 >
                     <DescribeInfo
                         data={{
-                            position:"Bachelor of University",
-                            nameCompany:'Hutech University',
-                            timeStart:'2019',
-                            timeEnd:'2023',
-                            description:''
+                            position: "Bachelor of University",
+                            nameCompany: 'Hutech University',
+                            timeStart: '2019',
+                            timeEnd: '2023',
+                            description: ''
                         }}
                     />
+                </div>
+
+                <Heading 
+                    text='Certificate' 
+                />
+                <div
+                    data-testid="cypress-certificates"
+                    className="mt-[22px] flex flex-col gap-8" 
+                >
+                    {certificate.map((item) => (
+                        <div
+                            key={item.name}
+                        >
+                            <h3
+                                className="capitalize dark:text-dark-fontColorHeading text-[1.3rem] not-italic 
+                                font-semibold leading-[31.68px] tracking-[-0.32px]"
+                            >
+                                {item.name}
+                            </h3>
+                            <p
+                                className="mt-[10px] dark:text-[#E6E6E6] text-[1rem] font-normal leading-[27.3px] tracking-[-0.16px]"
+                            >{item.placeOfIssue}</p>
+                        </div>
+                    ))}
                 </div>
 
             </section>
