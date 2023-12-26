@@ -3,7 +3,7 @@ import './globals.css'
 import React from 'react'
 import { Inter } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
-import { Navbar } from '@/components';
+import { Navbar, Reveal } from '@/components';
 import Image from 'next/image'
 import { facebookLogo, githubLogo } from '@/assets/images';
 import { Providers } from '@/redux/Providers';
@@ -21,7 +21,7 @@ function RootLayout({
   const handleFooterClick = (url: string) => {
     openNewPage(url)
   }
-  
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -45,41 +45,43 @@ function RootLayout({
                   {children}
                 </section>
 
-                <footer
-                  className="flex w-[100%] mt-[80px] py-[48px] md:py-0 box-border h-fit flex-col justify-center items-center"
-                >
-                  <ul
-                    className="flex flex-row gap-3"
+                <Reveal>
+                  <footer
+                    className="flex w-[100%] mt-[80px] py-[48px] md:py-0 box-border h-fit flex-col justify-center items-center"
                   >
-                    <li
-                      className="flex flex-row items-center gap-2 hover:cursor-pointer"
-                      onClick={() => handleFooterClick("https://github.com/Loiphan1003")}
+                    <ul
+                      className="flex flex-row gap-3"
                     >
-                      <p>
-                        GitHub
-                      </p>
+                      <li
+                        className="flex flex-row items-center gap-2 hover:cursor-pointer"
+                        onClick={() => handleFooterClick("https://github.com/Loiphan1003")}
+                      >
+                        <p>
+                          GitHub
+                        </p>
 
-                      <Image
-                        src={githubLogo}
-                        alt='GitHub'
-                      />
-                    </li>
-                    <li
-                      className="flex flex-row items-center gap-2 hover:cursor-pointer"
-                      onClick={() => handleFooterClick("https://www.facebook.com/profile.php?id=100004241627166")}
-                    >
-                      <p>
-                        Facebook
-                      </p>
+                        <Image
+                          src={githubLogo}
+                          alt='GitHub'
+                        />
+                      </li>
+                      <li
+                        className="flex flex-row items-center gap-2 hover:cursor-pointer"
+                        onClick={() => handleFooterClick("https://www.facebook.com/profile.php?id=100004241627166")}
+                      >
+                        <p>
+                          Facebook
+                        </p>
 
-                      <Image
-                        src={facebookLogo}
-                        alt='Facebook'
-                      />
-                    </li>
-                  </ul>
-                  <p className="mt-[20px]">Made by Loi Phan.</p>
-                </footer>
+                        <Image
+                          src={facebookLogo}
+                          alt='Facebook'
+                        />
+                      </li>
+                    </ul>
+                    <p className="mt-[20px]">Made by Loi Phan.</p>
+                  </footer>
+                </Reveal>
               </div>
             </div>
           </ThemeProvider>

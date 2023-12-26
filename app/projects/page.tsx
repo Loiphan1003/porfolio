@@ -1,5 +1,5 @@
 "use client"
-import { ProjectItem } from '@/components';
+import { ProjectItem, Reveal } from '@/components';
 import { RootState } from '@/redux/store';
 import React from 'react'
 import { useSelector } from 'react-redux';
@@ -10,20 +10,24 @@ const Projects = () => {
 
     return (
         <main
-            className="mt-[2rem] md:mt-[48px]"
+            className="mt-[2rem] md:mt-[48px] min-h-[60vh]"
         >
-            <header>
-                <h1 className="text-[2.2rem] md:text-[48px] font-bold not-italic leading-[53px]" >Projects</h1>
-            </header>
+            <Reveal>
+                <header>
+                    <h1 className="text-[2.2rem] md:text-[48px] font-bold not-italic leading-[53px]" >Projects</h1>
+                </header>
+            </Reveal>
 
-            <section
-                className="mt-[48px] grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-            >
-                {projectState.map((i) => (
-                    <ProjectItem key={i.name} data={i} />
-                ))}
+            <Reveal>
+                <section
+                    className="mt-[48px] grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+                >
+                    {projectState.map((i) => (
+                        <ProjectItem key={i.name} data={i} />
+                    ))}
 
-            </section>
+                </section>
+            </Reveal>
         </main>
     )
 }
