@@ -1,12 +1,22 @@
 "use client"
 import { ProjectItem, Reveal } from '@/components';
+import { getProjects } from '@/redux/reducer/projectSlice/asyncThunk';
 import { RootState } from '@/redux/store';
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 
 const Projects = () => {
 
     const projectState = useSelector((state: RootState) => state.project.project);
+
+    const dispatch = useDispatch<any>();
+
+    useEffect(() => {
+        if(projectState.length == 0){
+            dispatch(getProjects())
+        }
+    }, [projectState, dispatch])
+
 
     return (
         <main

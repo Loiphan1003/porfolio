@@ -22,8 +22,8 @@ const Me = () => {
 
       <section>
         <Reveal>
-          <p className='mt-2' >Hi, I&apos;m Lợi I&apos;m a frontend developer in Việt Nam. I am thrilled to have the opportunity to introduce myself and share my passion for both programming and my hobbies. As a frontend developer, I specialize in creating engaging and user-friendly
-            interfaces for websites and applications.
+          <p className='mt-2' >
+            Hi, I&apos;m a software engineer in Vietnam. I am happy to have the opportunity to introduce myself and share my passion for both programming and my hobby. As a software engineer, I always try to improve my knowledge, design and create applications that improve my life ...
           </p>
 
           <ul

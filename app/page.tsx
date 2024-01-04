@@ -52,7 +52,7 @@ export default function Home() {
               className="mt-[1.5rem] md:mt-[25px] text-[1rem] md:text-[1.2rem] dark:text-dark-fontColorBase text-light-fontColorBase font-medium leading-[31px] not-italic tracking-[-0.16px]"
             >
               <p>Welcome to my portfolio</p>
-              <p className="md:mt-[20px]">I&apos;m a frontend developer in Ho Chi Minh City. I like listening music and gaming.</p>
+              <p className="md:mt-[20px]">I&apos;m a software engineer in Ho Chi Minh City. I like listening music and gaming.</p>
             </div>
           </div>
 
