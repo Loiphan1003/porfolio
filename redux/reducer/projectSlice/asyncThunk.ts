@@ -8,12 +8,34 @@ export const getProjects = createAsyncThunk(
             const project: Project[] = [
                 {
                     yearBuild: 2023,
+                    name: "MovieAPI",
+                    description: "The simple api about movie and built with C#, ASP .NET Core Web API",
+                    tags: [
+                        {
+                            name: 'source',
+                            link: 'https://github.com/Loiphan1003/MovieAPI.git'
+                        }
+                    ]
+                },
+                {
+                    yearBuild: 2023,
                     name: "ChatApp",
                     description: "A simple Chatapp RealTime, you can chat with your friends.",
                     tags: [
                         {
                             name: 'source',
                             link: 'https://github.com/Loiphan1003/chatwithme'
+                        }
+                    ]
+                },
+                {
+                    yearBuild: 2023,
+                    name: "Website supports learning programming languages.",
+                    description: "Self-taught website building project.",
+                    tags: [
+                        {
+                            name: 'source',
+                            link: 'https://github.com/Loiphan1003/DA_CODESAMPLE.git'
                         }
                     ]
                 },
@@ -27,22 +49,6 @@ export const getProjects = createAsyncThunk(
                             link: 'https://github.com/Loiphan1003/WeatherForecast'
                         }
                     ]
-                }
-                ,
-                {
-                    yearBuild: 2023,
-                    name: "Assassin's creed valhalla",
-                    description: "This is a landing page design from figma.",
-                    tags: [
-                        {
-                            name: 'source',
-                            link: 'https://github.com/Loiphan1003/assassin-landing-page.git'
-                        },
-                        {
-                            name: 'demo',
-                            link: 'https://joyful-halva-dbff04.netlify.app/'
-                        }
-                    ]
                 },
                 {
                     yearBuild: 2023,
@@ -52,6 +58,17 @@ export const getProjects = createAsyncThunk(
                         {
                             name: 'demo',
                             link: 'https://pomodoro-bay-nu.vercel.app/'
+                        }
+                    ]
+                },
+                {
+                    yearBuild: 2021,
+                    name: "Hotel Management",
+                    description: "The Desktop Application for manager hotel work, built with WPF, C#.",
+                    tags: [
+                        {
+                            name: 'source',
+                            link: 'https://github.com/Loiphan1003/QuanLyKhachSan_WPF_3Layer.git'
                         }
                     ]
                 }

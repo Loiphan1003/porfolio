@@ -54,9 +54,11 @@ const Resume = () => {
                     <div
                         className="mt-[15px] pl-[24px] box-border flex flex-col gap-[7px]"
                     >
-                        <li><span className='font-bold' >Languages</span> - Node.js, C#, JavaScript (React/Redux, NextJS), TypeScript, SQL,
+                        <li><span className='font-bold' >Languages</span> - C#, JavaScript, TypeScript, SQL,
                             HTML5, CSS3, JSON</li>
 
+                        <li><span className='font-bold' >Frameworks and Libraries</span> - ASP.NET MVC, .NET Core Web API, WPF, Entity Framework, ReactJS, Redux, Tailwind CSS, Axios, Cypress.</li>
+                        
                         <li><span className='font-bold' >Concepts</span> - Web Application Development, Design Patterns (REST API Design, MVC), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit)</li>
 
                         <li><span className='font-bold' >Database</span> - MySQL, SQL Server, MongoDB</li>
