@@ -2,7 +2,6 @@
 import { ProjectItem, Reveal } from '@/components';
 import { getProjects } from '@/redux/reducer/projectSlice/asyncThunk';
 import { RootState } from '@/redux/store';
-import { AnyAction } from '@reduxjs/toolkit';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -16,7 +15,7 @@ const Projects = () => {
         if(projectState.length == 0){
             dispatch(getProjects())
         }
-    }, [projectState])
+    }, [projectState, dispatch])
 
 
     return (
