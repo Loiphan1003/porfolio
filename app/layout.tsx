@@ -1,16 +1,14 @@
 "use client"
-import './globals.css'
+import '@/app/globals.css';
 import React from 'react'
-import { Inter } from 'next/font/google';
 import { ThemeProvider } from 'next-themes';
-import { Navbar, Reveal } from '@/components';
-import Image from 'next/image'
-import { facebookLogo, githubLogo } from '@/assets/images';
-import { Providers } from '@/redux/Providers';
-import { openNewPage } from '@/utils';
+import { Reveal } from '@/app/components';
+import { Navbar } from '@/app/components/ui/Navbar';
+import StoreProvider from '@/lib/StoreProvider';
+import { inter } from './components/ui/fonts';
+import { cn } from '@/lib/utils';
 
 
-const inter = Inter({ subsets: ['latin'] });
 
 function RootLayout({
   children,
@@ -18,74 +16,44 @@ function RootLayout({
   children: React.ReactNode
 }) {
 
-  const handleFooterClick = (url: string) => {
-    openNewPage(url)
-  }
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+
         <title>Lợi Phan</title>
       </head>
-      <body className={inter.className}>
-        <Providers>
-          <ThemeProvider enableSystem={true} attribute="class">
+      <body className={cn(
+        "min-h-screen bg-background font-sans antialiased",
+        inter.variable
+      )}>
+        <StoreProvider>
+          <ThemeProvider
+            enableSystem={true}
+            attribute="class"
+            defaultTheme='system'
+            disableTransitionOnChange
+          >
             <div
-              className="dark:bg-dark-bg dark:text-dark-text"
+              className="dark:bg-dark-bg dark:text-dark-text h-screen max-h-fit relative"
             >
+              <Reveal>
+                <Navbar />
+              </Reveal>
               <div
-                className="md:mx-auto max-w-[1160px] min-h-screen w-[100%]  md:py-[48px]
-                px-[16px] md:px-[30px] box-border 2xl:px-[32px] "
+                className="container mx-auto w-screen h-fit mb-6"
               >
-                <Navbar></Navbar>
-
-                <section
-                  className="w-auto min-h-full"
-                >
-                  {children}
-                </section>
-
-                <Reveal>
-                  <footer
-                    className="flex w-[100%] mt-[80px] py-[48px] md:py-0 box-border h-fit flex-col justify-center items-center"
-                  >
-                    <ul
-                      className="flex flex-row gap-3"
-                    >
-                      <li
-                        className="flex flex-row items-center gap-2 hover:cursor-pointer"
-                        onClick={() => handleFooterClick("https://github.com/Loiphan1003")}
-                      >
-                        <p>
-                          GitHub
-                        </p>
-
-                        <Image
-                          src={githubLogo}
-                          alt='GitHub'
-                        />
-                      </li>
-                      <li
-                        className="flex flex-row items-center gap-2 hover:cursor-pointer"
-                        onClick={() => handleFooterClick("https://www.facebook.com/profile.php?id=100004241627166")}
-                      >
-                        <p>
-                          Facebook
-                        </p>
-
-                        <Image
-                          src={facebookLogo}
-                          alt='Facebook'
-                        />
-                      </li>
-                    </ul>
-                    <p className="mt-[20px]">Made by Loi Phan.</p>
-                  </footer>
-                </Reveal>
+                {children}
               </div>
+
+              <footer
+                className="w-screen h-fit absolute py-5 bottom-0 dark:bg-dark-cardBackgroundColor mt-[80px] flex-col justify-center items-center"
+              >
+                <p className="text-sm text-center leading-5 font-normal">Made by Lợi Phan.</p>
+              </footer>
             </div>
           </ThemeProvider>
-        </Providers>
+        </StoreProvider>
       </body>
     </html>
   )

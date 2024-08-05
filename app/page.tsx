@@ -1,21 +1,19 @@
 "use client";
 import Image from 'next/image'
-import { ProjectItem, Reveal } from '@/components';
+import { ProjectItem, Reveal } from '@/app/components';
 import { useRouter } from 'next/navigation'
 import myImage from '../assets/images/lp.jpg';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProjects } from '@/redux/reducer/projectSlice/asyncThunk';
-import { RootState } from '@/redux/store';
-import { Button } from '@/components/Button';
-
-
+import { Button } from '@/app/components/Button';
+import { getProjects } from '@/lib/features/asyncThunk';
+import { RootState } from '@/lib/store';
 
 
 export default function Home() {
 
   const dispatch = useDispatch<any>();
-  const projectState = useSelector((state: RootState) => state.project.project);
+  const projectState = useSelector((state: RootState) => state.projects.projects);
   const router = useRouter();
 
 
@@ -34,25 +32,25 @@ export default function Home() {
     <React.Fragment>
       <Reveal>
         <section
-          className="w-auto h-fit flex flex-col md:flex-row gap-[24px] mt-[20px] md:mt-[48px] md:items-center"
+          className="w-auto h-fit flex flex-col md:flex-row md:justify-between gap-[24px] mt-[20px] md:mt-[48px] md:items-center"
         >
           <div
-            className="md:pt-[79px] md:pr-[83px] md:pb-[48px] box-border"
+            className="md:pt-[79px] md:pr-[83px] md:pb-[48px]"
           >
             <h1
               className="relative w-[max-content] text-[2.2rem] md:text-[3rem] dark:text-dark-fontColorHeading
             text-light-fontColorHeading font-bold not-italic before:absolute 
             before:inset-0 dark:before:bg-dark-bg before:text-light-fontColorHeading
-            before:animate-typing"
+            before:animate-typing transition-colors delay-150"
             >
               Hi, I&apos;m Lợi ✌
             </h1>
 
             <div
-              className="mt-[1.5rem] md:mt-[25px] text-[1rem] md:text-[1.2rem] dark:text-dark-fontColorBase text-light-fontColorBase font-medium leading-[31px] not-italic tracking-[-0.16px]"
+              className="mt-[1.5rem] md:mt-[25px] text-[1rem] md:text-[1.2rem] dark:text-dark-fontColorBase text-light-fontColorBase font-medium leading-[31px] not-italic tracking-[-0.16px] delay-150"
             >
-              <p>Welcome to my portfolio</p>
-              <p className="md:mt-[20px]">I&apos;m a software engineer in Ho Chi Minh City. I like listening music and gaming.</p>
+              <p className='transition-colors ease-in-out' >Welcome to my portfolio</p>
+              <p className="md:mt-3 text-base leading-6 font-normal transition-colors ease-in-out ">I&apos;m a software engineer in Ho Chi Minh City. I like listening music and gaming.</p>
             </div>
           </div>
 

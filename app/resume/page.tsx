@@ -1,12 +1,24 @@
 "use client"
-import { Reveal } from '@/components';
-import DescribeInfo from '@/components/DescribeInfo';
-import Heading from '@/components/Heading';
-import { InfoLayout } from '@/components/layouts';
+import { Reveal } from '@/app/components';
+import DescribeInfo from '@/app/components/DescribeInfo';
+import Heading from '@/app/components/Heading';
+import { InfoLayout } from '@/app/components/layouts';
 import { certificate } from '@/data';
+import Link from 'next/link';
 import React from 'react'
 
 const Resume = () => {
+
+    const skills = [
+        { key: 'Languages', value: "C#, JavaScript, TypeScript, SQL, HTML5, CSS3, JSON." },
+        { key: 'Frameworks and Libraries', value: "ASP.NET MVC, .NET Core Web API, WPF, Entity Framework, ReactJS, Redux, Tailwind CSS, Axios, Cypress." },
+        { key: 'Concepts', value: "Web Application Development, Design Patterns (REST API Design, MVC), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit)." },
+        { key: 'Database', value: "MySQL, SQL Server, MongoDB." },
+        { key: 'Version Control', value: "Git." },
+        { key: 'Tools', value: "Figma, Postman, Visual Studio Code, Visual Studio." },
+    ];
+
+
     return (
         <InfoLayout>
             <h1
@@ -16,21 +28,19 @@ const Resume = () => {
             </h1>
 
             <section
-                className="mt-[32px]"
+                className="mt-[32px] flex flex-col space-y-14"
             >
                 <Reveal>
-                    <ul
-                        className="pl-[24px] box-border"
-                    >
+                    <ul  >
                         <li>Email - hello [at] phanvuloi.it@gmail.com</li>
-                        <li>GitHub - Loiphan1003</li>
+                        <li>GitHub - <Link href="https://github.com/Loiphan1003" className='text-[#9CA0FA] underline underline-offset-2'>Loiphan1003</Link></li>
                     </ul>
                 </Reveal>
 
                 <Reveal>
                     <Heading text='Experience' />
                     <div
-                        className='mt-[22px] flex flex-col gap-[55px]'
+                        className='mt-4'
                     >
                         <DescribeInfo
 
@@ -47,26 +57,18 @@ const Resume = () => {
                 </Reveal>
 
                 <Reveal>
-                    <Heading
-                        text='Skills'
-                    />
+                    <Heading text='Skills' />
 
                     <div
-                        className="mt-[15px] pl-[24px] box-border flex flex-col gap-[7px]"
+                        className="mt-4  box-border flex flex-col space-y-3"
                     >
-                        <li><span className='font-bold' >Languages</span> - C#, JavaScript, TypeScript, SQL,
-                            HTML5, CSS3, JSON</li>
-
-                        <li><span className='font-bold' >Frameworks and Libraries</span> - ASP.NET MVC, .NET Core Web API, WPF, Entity Framework, ReactJS, Redux, Tailwind CSS, Axios, Cypress.</li>
-                        
-                        <li><span className='font-bold' >Concepts</span> - Web Application Development, Design Patterns (REST API Design, MVC), Authentication and Security (OAuth2, JWT), Webpack, Electron, Testing (Unit)</li>
-
-                        <li><span className='font-bold' >Database</span> - MySQL, SQL Server, MongoDB</li>
-
-                        <li><span className='font-bold' >Version Control</span> - Git</li>
-
-                        <li><span className='font-bold' >Tools</span> - Figma, Postman, Visual Studio Code, Visual Studio
-                        </li>
+                        {skills.map(skill => (
+                            <li
+                                key={skill.key}
+                            >
+                                <span className='font-bold' >{skill.key}</span>: {skill.value}
+                            </li>
+                        ))}
                     </div>
                 </Reveal>
 
@@ -76,17 +78,19 @@ const Resume = () => {
                     />
 
                     <div
-                        className='mt-[22px] flex flex-col gap-[55px]'
+                        className='mt-[22px]'
                     >
-                        <DescribeInfo
-                            data={{
-                                position: "Bachelor of University",
-                                nameCompany: 'Hutech University',
-                                timeStart: '2019',
-                                timeEnd: '2023',
-                                description: ''
-                            }}
-                        />
+                        <h3
+                            className="capitalize dark:text-dark-fontColorHeading text-[1.3rem] not-italic 
+                                font-semibold "
+                        >
+                            HUTECH University - 2019-2023
+                        </h3>
+
+                        <ul className='mt-2 flex flex-col gap-2' >
+                            <li className="dark:text-[#E6E6E6] text-base font-normal">Degree Of Engineer</li>
+                            <li className="dark:text-[#E6E6E6] text-base font-normal"> GPA: 3.27/4</li>
+                        </ul>
                     </div>
                 </Reveal>
 
@@ -96,27 +100,26 @@ const Resume = () => {
                     />
 
                     <div
-                        data-testid="cypress-certificates"
                         className="mt-[22px] flex flex-col gap-8"
                     >
                         {certificate.map((item) => (
-                            <div
-                                key={item.name}
-                            >
+                            <div key={item.name}>
                                 <h3
                                     className="capitalize dark:text-dark-fontColorHeading text-[1.3rem] not-italic 
                                 font-semibold leading-[31.68px] tracking-[-0.32px]"
                                 >
                                     {item.name}
                                 </h3>
+
                                 <p
-                                    className="mt-[10px] dark:text-[#E6E6E6] text-[1rem] font-normal leading-[27.3px] tracking-[-0.16px]"
-                                >{item.placeOfIssue}</p>
+                                    className="mt-[10px] dark:text-[#E6E6E6] text-base font-normal"
+                                >
+                                    {item.placeOfIssue}
+                                </p>
                             </div>
                         ))}
                     </div>
                 </Reveal>
-
             </section>
         </InfoLayout>
     )
