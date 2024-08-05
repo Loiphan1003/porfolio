@@ -8,33 +8,34 @@ const InfoLayout = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <div
-            className="mt-[48px] w-full min-h-fit transition-colors ease-linear delay-200 flex flex-col lg:flex-row gap-[6rem]"
+            className="mt-[48px] w-full lg:flex justify-between lg:flex-row gap-[6rem]"
         >
             <div
-                className="max-w-full min-w-0"
+                className="max-w-full min-w-[50%]"
             >
                 {children}
             </div>
 
-            <Reveal>
-                <aside
-                    className="lg:block hidden md:max-w-[300px]"
-                >
+            <div className='w-[50%]' >
+                <Reveal>
                     <div
-                        className="my-[1rem] p-[25px] box-border flex flex-col gap-2 
-                        rounded-md border dark:border-dark-borderColor dark:bg-[#1F1F1F]
-                    "
+                        className="lg:block hidden md:max-w-[300px]"
                     >
-                        <h2>Me</h2>
-                        <Image
-                            src={lpImage}
-                            alt='My image'
-                            width={0}
-                            height={0}
-                        />
+                        <div
+                            className="my-[1rem] p-[25px] box-border flex flex-col gap-2 
+                            rounded-md border dark:border-dark-borderColor dark:bg-[#1F1F1F]"
+                        >
+                            <h2>Me</h2>
+                            <Image
+                                src={lpImage}
+                                alt='My image'
+                                width={0}
+                                height={0}
+                            />
+                        </div>
                     </div>
-                </aside>
-            </Reveal>
+                </Reveal>
+            </div>
         </div>
     )
 }

@@ -65,13 +65,19 @@ export default function Home() {
       </Reveal>
 
       <Reveal>
+        <section>
+          <h2>About Me</h2>
+        </section>
+      </Reveal>
+
+      <Reveal>
         <section
           className="mt-[48px]"
         >
           <div
             className="flex flex-row justify-between items-center"
           >
-            <p className=" dark:text-dark-fontColorHeading text-light-fontColorHeading text-[1.7rem] md:text-[2rem] font-bold leading-[35px] not-italic tracking-[-0.8px]" >Projects</p>
+            <h2 className=" dark:text-dark-fontColorHeading text-light-fontColorHeading text-[1.7rem] md:text-[2rem] font-bold leading-[35px] not-italic tracking-[-0.8px]" >Projects</h2>
 
             <Button label='View all' onClick={() => handleViewAll('projects')} />
           </div>

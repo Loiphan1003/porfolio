@@ -45,7 +45,7 @@ export const Navbar = () => {
                             alt='header'
                         />
                         <p className="text-[0.9rem] md:text-[1.2rem] font-bold not-italic leading-[19px]" >Lợi Phan</p>
-                    </Link>
+                    </Link >
 
                     <ul
                         className="w-[200px] flex gap-[20px] space-x-2 ml-[10px] md:ml-0 md:pl-1 md:pr-[170px]"
@@ -63,11 +63,11 @@ export const Navbar = () => {
                             </li>
                         ))}
                     </ul>
-                </div>
+                </div >
 
                 <ThemeButton />
             </div >
-        </div>
+        </div >
 
     )
 }

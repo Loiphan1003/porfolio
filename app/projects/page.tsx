@@ -20,7 +20,7 @@ const Projects = () => {
 
     return (
         <main
-            className="mt-[2rem] md:mt-[48px] min-h-[60vh]"
+            className="mt-[2rem] md:mt-[48px] min-h-[70vh]"
         >
             <Reveal>
                 <header>

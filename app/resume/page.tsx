@@ -21,11 +21,13 @@ const Resume = () => {
 
     return (
         <InfoLayout>
-            <h1
-                className="dark:text-dark-fontColorHeading text-[3rem] font-bold not-italic leading-[52.8px]"
-            >
-                Lợi Phan
-            </h1>
+            <Reveal>
+                <h1
+                    className="dark:text-dark-fontColorHeading text-[3rem] font-bold not-italic leading-[52.8px]"
+                >
+                    Lợi Phan
+                </h1>
+            </Reveal>
 
             <section
                 className="mt-[32px] flex flex-col space-y-14"

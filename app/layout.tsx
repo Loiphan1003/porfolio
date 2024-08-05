@@ -35,19 +35,19 @@ function RootLayout({
             disableTransitionOnChange
           >
             <div
-              className="dark:bg-dark-bg dark:text-dark-text h-screen max-h-fit relative"
+              className="dark:bg-dark-bg dark:text-dark-text h-auto relative"
             >
               <Reveal>
                 <Navbar />
               </Reveal>
               <div
-                className="container mx-auto w-screen h-fit mb-6"
+                className="container mx-auto w-screen h-fit px-4 md:px-0"
               >
                 {children}
               </div>
 
               <footer
-                className="w-screen h-fit absolute py-5 bottom-0 dark:bg-dark-cardBackgroundColor mt-[80px] flex-col justify-center items-center"
+                className="w-screen h-fit  py-5 bottom-0 dark:bg-dark-cardBackgroundColor mt-[80px] flex-col justify-center items-center"
               >
                 <p className="text-sm text-center leading-5 font-normal">Made by Lợi Phan.</p>
               </footer>
