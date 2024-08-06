@@ -47,9 +47,9 @@ function RootLayout({
               </div>
 
               <footer
-                className="w-screen h-fit  py-5 bottom-0 dark:bg-dark-cardBackgroundColor mt-[80px] flex-col justify-center items-center"
+                className="w-full h-fit py-5 bottom-0 dark:bg-dark-cardBackgroundColor mt-[80px] flex-col justify-center items-center"
               >
-                <p className="text-sm text-center leading-5 font-normal">Made by Lợi Phan.</p>
+                <p className="text-sm text-center leading-5 font-normal">© 2024 Made by Lợi Phan.</p>
               </footer>
             </div>
           </ThemeProvider>

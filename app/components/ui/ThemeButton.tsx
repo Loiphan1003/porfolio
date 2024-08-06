@@ -1,5 +1,4 @@
 import { useTheme } from 'next-themes';
-import { useEffect } from 'react';
 import { Moon, Sun } from "lucide-react"
 
 import { Button } from "@/app/components/ui/button"
@@ -30,6 +29,7 @@ const ThemeButton = () => {
             <DropdownMenuContent align='end'>
                 {themes.map(theme => (
                     <DropdownMenuItem
+                        key={theme}
                         onClick={() => setTheme(theme)}
                     >
                         {theme}
